@@ -64,8 +64,11 @@
 			mosq.onmessage = function(topic, payload, qos){
 				var p1 = document.createElement("p1");
 				var p2 = document.createElement("p2");
-				var payload_parseado = payload.split("-");
+				var payload_util = payload.substring(0, 3);
+				var payload_parseado = payload_util.split("-");
 				
+				window.alert(payload_util);
+
 				switch (payload_parseado[0])
 				{
 					case '0':
